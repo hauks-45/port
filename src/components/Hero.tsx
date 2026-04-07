@@ -45,13 +45,13 @@ export default function Hero() {
         className="absolute inset-0 z-0 overflow-hidden"
       >
         <motion.div 
-          className="absolute -top-[25vh] -left-[10vw] w-[120vw] h-[150vh]" 
+          className="absolute -top-[10vh] md:-top-[25vh] -left-[5vw] md:-left-[10vw] w-[110vw] md:w-[120vw] h-[120vh] md:h-[150vh]" 
           style={{ y }}
         >
           <img
             src="/hero-bg.png"
             alt="Edwin Alex in Classroom"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[center_15%] md:object-[center_20%]"
           />
         </motion.div>
         <div className="absolute inset-0 bg-black/65" />
