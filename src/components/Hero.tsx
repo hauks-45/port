@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import gsap from "gsap";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const roles = ["No-code Designer", "Product Designer", "AI Strategist", "Brand Architect"];
+
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, -300]);
 
   useEffect(() => {
     // Role cycling
@@ -39,13 +42,18 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 overflow-hidden"
       >
-        <img
-          src="/hero-bg.png"
-          alt="Edwin Alex in Classroom"
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2"
-        />
+        <motion.div 
+          className="absolute -top-[25vh] -left-[10vw] w-[120vw] h-[150vh]" 
+          style={{ y }}
+        >
+          <img
+            src="/hero-bg.png"
+            alt="Edwin Alex in Classroom"
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-black/65" />
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent" />
       </motion.div>
