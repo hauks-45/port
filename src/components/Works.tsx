@@ -5,6 +5,7 @@ const projects = [
   {
     title: "TEXTURA",
     category: "Framer / Clothing Brand",
+    description: "Textura — E-commerce, Clothing",
     image: "https://picsum.photos/seed/textura/1200/800",
     span: "md:col-span-7",
     aspect: "aspect-[16/10]",
@@ -13,6 +14,7 @@ const projects = [
   {
     title: "E-Commerce Wireframes",
     category: "Framer Wireframer",
+    description: "Wireframer — E-commerce, UI UX",
     image: "https://picsum.photos/seed/wireframe/800/1000",
     span: "md:col-span-5",
     aspect: "aspect-[4/5]",
@@ -20,6 +22,7 @@ const projects = [
   {
     title: "AI-Built Interfaces",
     category: "Claude / Perplexity",
+    description: "Interfaces — AI, Generative Design",
     image: "https://picsum.photos/seed/ai-ui/800/1000",
     span: "md:col-span-5",
     aspect: "aspect-[4/5]",
@@ -27,6 +30,7 @@ const projects = [
   {
     title: "Digital Product Design",
     category: "Product / UX",
+    description: "Products — SaaS, Branding",
     image: "https://picsum.photos/seed/product/1200/800",
     span: "md:col-span-7",
     aspect: "aspect-[16/10]",
@@ -93,14 +97,20 @@ export default function Works() {
               />
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-bg/70 opacity-0 group-hover:opacity-100 backdrop-blur-lg transition-all duration-500 flex items-center justify-center">
-                <div className="relative p-[1px] rounded-full accent-gradient animate-gradient-shift">
+              <div className="absolute inset-0 bg-bg/85 opacity-0 group-hover:opacity-100 backdrop-blur-xl transition-all duration-500 flex flex-col items-center justify-center p-8 text-center translate-y-4 group-hover:translate-y-0">
+                <div className="relative p-[1px] rounded-full accent-gradient animate-gradient-shift mb-4">
                   <div className="bg-white px-6 py-2 rounded-full">
-                    <span className="text-black text-xs font-medium tracking-wide">
-                      View — <span className="font-display italic">{project.title}</span>
+                    <span className="text-black text-[10px] font-bold uppercase tracking-widest">
+                      View Project
                     </span>
                   </div>
                 </div>
+                <h3 className="text-2xl md:text-3xl font-display italic text-text-primary mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-muted text-sm max-w-[200px]">
+                  {project.description}
+                </p>
               </div>
 
               {/* Static Label (Mobile) */}
