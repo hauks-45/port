@@ -54,7 +54,7 @@ export default function FAQ() {
           </motion.div>
 
           {/* FAQ Accordion */}
-          <div className="lg:col-span-12 xl:col-span-7 space-y-4">
+          <div className="lg:col-span-12 xl:col-span-7 space-y-3">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -65,24 +65,24 @@ export default function FAQ() {
               >
                 <div 
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className={`group cursor-pointer overflow-hidden rounded-3xl border transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] ${
+                  className={`group cursor-pointer overflow-hidden rounded-2xl border transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] ${
                     openIndex === index 
                       ? 'bg-surface border-white/10' 
                       : 'bg-transparent border-stroke hover:border-white/5'
                   }`}
                 >
-                  <div className="p-6 md:p-10 flex items-center justify-between gap-6">
-                    <h3 className={`text-lg md:text-xl font-medium tracking-tight transition-colors duration-300 ${
+                  <div className="p-5 md:p-7 flex items-center justify-between gap-6">
+                    <h3 className={`text-base md:text-lg font-medium tracking-tight transition-colors duration-300 ${
                       openIndex === index ? 'text-text-primary' : 'text-text-primary/80 group-hover:text-text-primary'
                     }`}>
                       {faq.question}
                     </h3>
-                    <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-500 ease-[0.25, 0.1, 0.25, 1] ${
+                    <div className={`flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full border flex items-center justify-center transition-all duration-500 ease-[0.25, 0.1, 0.25, 1] ${
                       openIndex === index 
                         ? 'bg-text-primary text-bg border-text-primary rotate-45' 
                         : 'bg-transparent text-muted border-stroke group-hover:border-white/20'
                     }`}>
-                      <Plus className="w-5 h-5 md:w-6 md:h-6" />
+                      <Plus className="w-4 h-4 md:w-5 md:h-5" />
                     </div>
                   </div>
 
@@ -94,9 +94,9 @@ export default function FAQ() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                       >
-                        <div className="px-6 pb-8 md:px-10 md:pb-10 pt-0">
-                          <div className="w-full h-px bg-stroke mb-8" />
-                          <p className="text-muted text-base md:text-lg leading-relaxed max-w-2xl">
+                        <div className="px-5 pb-7 md:px-7 md:pb-7 pt-0">
+                          <div className="w-full h-px bg-stroke mb-6" />
+                          <p className="text-muted text-sm md:text-base leading-relaxed max-w-2xl">
                             {faq.answer}
                           </p>
                         </div>

@@ -4,15 +4,40 @@ import { motion } from "motion/react";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
+  const [activeTab, setActiveTab] = useState("Home");
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
+      
+      // Simple section detection for active tab
+      const workSection = document.getElementById("work");
+      if (workSection) {
+        const rect = workSection.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          setActiveTab("Work");
+        } else if (window.scrollY < 100) {
+          setActiveTab("Home");
+        }
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = ["Home", "Work", "Resume"];
+
+  const handleNavClick = (link: string) => {
+    setActiveTab(link);
+    if (link === "Home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (link === "Work") {
+      document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+    } else if (link === "Resume") {
+      // Placeholder for resume action, e.g. open PDF
+      window.open("/resume.pdf", "_blank");
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 md:pt-6 px-4">
@@ -22,7 +47,10 @@ export default function Navbar() {
         }`}
       >
         {/* Logo */}
-        <div className="group relative w-9 h-9 flex items-center justify-center rounded-full overflow-hidden transition-transform hover:scale-110">
+        <div 
+          onClick={() => handleNavClick("Home")}
+          className="group relative w-9 h-9 flex items-center justify-center rounded-full overflow-hidden transition-transform hover:scale-110 cursor-pointer"
+        >
           <div className="absolute inset-0 accent-gradient animate-gradient-shift group-hover:animate-[gradient-shift_3s_linear_infinite_reverse]" />
           <div className="absolute inset-[2px] bg-bg rounded-full flex items-center justify-center overflow-hidden">
             <img 
@@ -40,8 +68,9 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <button
               key={link}
+              onClick={() => handleNavClick(link)}
               className={`text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors ${
-                link === "Home" 
+                activeTab === link 
                   ? "text-text-primary bg-stroke/50" 
                   : "text-muted hover:text-text-primary hover:bg-stroke/50"
               }`}
@@ -54,7 +83,10 @@ export default function Navbar() {
         <div className="w-px h-5 bg-stroke mx-2" />
 
         {/* Say Hi Button */}
-        <button className="group relative text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-text-primary overflow-hidden">
+        <button 
+          onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}
+          className="group relative text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-text-primary overflow-hidden"
+        >
           <span className="relative z-10 flex items-center gap-1">
             Say hi <span className="text-[10px]">↗</span>
           </span>
