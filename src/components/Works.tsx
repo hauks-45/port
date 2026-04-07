@@ -3,37 +3,36 @@ import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
-    title: "TEXTURA",
-    category: "Framer / Clothing Brand",
-    description: "Textura — E-commerce, Clothing",
-    image: "https://picsum.photos/seed/textura/1200/800",
-    span: "md:col-span-7",
-    aspect: "aspect-[16/10]",
-    link: "https://textura-cloths.framer.website"
-  },
-  {
-    title: "E-Commerce Wireframes",
-    category: "Framer Wireframer",
-    description: "Wireframer — E-commerce, UI UX",
-    image: "https://picsum.photos/seed/wireframe/800/1000",
+    title: "KSRTC",
+    category: "Transport / Booking",
+    description: "KSRTC — Bus Booking & Schedule",
+    image: "/ksrtc.jpg",
     span: "md:col-span-5",
     aspect: "aspect-[4/5]",
   },
   {
-    title: "AI-Built Interfaces",
-    category: "Claude / Perplexity",
-    description: "Interfaces — AI, Generative Design",
-    image: "https://picsum.photos/seed/ai-ui/800/1000",
-    span: "md:col-span-5",
-    aspect: "aspect-[4/5]",
-  },
-  {
-    title: "Digital Product Design",
-    category: "Product / UX",
-    description: "Products — SaaS, Branding",
-    image: "https://picsum.photos/seed/product/1200/800",
+    title: "Zerofit",
+    category: "E-Commerce / Clothing",
+    description: "Zerofit — Pure Performance Apparel",
+    image: "/zerofit.jpg",
     span: "md:col-span-7",
     aspect: "aspect-[16/10]",
+  },
+  {
+    title: "Inkspresso",
+    category: "Printing / B2B",
+    description: "Inkspresso — Quality Printing Services",
+    image: "/inkspresso.jpg",
+    span: "md:col-span-7",
+    aspect: "aspect-[16/10]",
+  },
+  {
+    title: "HobartRRJ",
+    category: "Music / Artist",
+    description: "HobartRRJ — Latest Single Release",
+    image: "/hobart.jpg",
+    span: "md:col-span-5",
+    aspect: "aspect-[4/5]",
   },
 ];
 
