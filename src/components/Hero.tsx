@@ -8,7 +8,7 @@ export default function Hero() {
   const roles = ["No-code Designer", "Product Designer", "AI Strategist", "Brand Architect"];
 
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], [0, -300]);
+  const y = useTransform(scrollY, [0, 1000], [0, -150]);
 
   useEffect(() => {
     // Role cycling
