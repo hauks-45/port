@@ -97,7 +97,7 @@ export default function Works() {
               />
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 backdrop-blur-[3px] transition-all duration-500 flex flex-col items-center justify-center p-8 text-center translate-y-4 group-hover:translate-y-0">
+              <div className="absolute inset-0 bg-black/15 opacity-0 group-hover:opacity-100 backdrop-blur-[1.5px] transition-all duration-500 flex flex-col items-center justify-center p-8 text-center translate-y-4 group-hover:translate-y-0">
                 <div className="mb-4 bg-white/10 backdrop-blur-lg border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] px-6 py-2 rounded-full flex items-center justify-center">
                   <span className="text-white text-[10px] font-bold uppercase tracking-widest">
                     View Project
