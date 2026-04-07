@@ -8,7 +8,7 @@ const projects = [
     description: "KSRTC — Bus Booking & Schedule",
     image: "/ksrtc.png",
     span: "md:col-span-5",
-    aspect: "aspect-[4/5]",
+    aspect: "aspect-[3/4]",
   },
   {
     title: "Zerofit",
@@ -19,20 +19,20 @@ const projects = [
     aspect: "aspect-[16/10]",
   },
   {
-    title: "Inkspresso",
-    category: "Printing / B2B",
-    description: "Inkspresso — Quality Printing Services",
-    image: "/inkspresso.png",
-    span: "md:col-span-7",
-    aspect: "aspect-[16/10]",
-  },
-  {
     title: "HobartRRJ",
     category: "Music / Artist",
     description: "HobartRRJ — Latest Single Release",
     image: "/hobart.png",
-    span: "md:col-span-5",
-    aspect: "aspect-[4/5]",
+    span: "md:col-span-12",
+    aspect: "aspect-[16/7]",
+  },
+  {
+    title: "Inkspresso",
+    category: "Printing / B2B",
+    description: "Inkspresso — Quality Printing Services",
+    image: "/inkspresso.png",
+    span: "md:col-span-12",
+    aspect: "aspect-[16/7]",
   },
 ];
 
