@@ -97,18 +97,16 @@ export default function Works() {
               />
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-bg/85 opacity-0 group-hover:opacity-100 backdrop-blur-xl transition-all duration-500 flex flex-col items-center justify-center p-8 text-center translate-y-4 group-hover:translate-y-0">
-                <div className="relative p-[1px] rounded-full accent-gradient animate-gradient-shift mb-4">
-                  <div className="bg-white px-6 py-2 rounded-full">
-                    <span className="text-black text-[10px] font-bold uppercase tracking-widest">
-                      View Project
-                    </span>
-                  </div>
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 backdrop-blur-[3px] transition-all duration-500 flex flex-col items-center justify-center p-8 text-center translate-y-4 group-hover:translate-y-0">
+                <div className="mb-4 bg-white/10 backdrop-blur-lg border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] px-6 py-2 rounded-full flex items-center justify-center">
+                  <span className="text-white text-[10px] font-bold uppercase tracking-widest">
+                    View Project
+                  </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-display italic text-text-primary mb-2">
+                <h3 className="text-2xl md:text-3xl font-display italic text-white mb-2 shadow-black/50 drop-shadow-lg">
                   {project.title}
                 </h3>
-                <p className="text-muted text-sm max-w-[200px]">
+                <p className="text-white/90 text-sm max-w-[200px] shadow-black/50 drop-shadow-md">
                   {project.description}
                 </p>
               </div>
