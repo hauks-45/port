@@ -7,6 +7,7 @@ import Works from "./components/Works";
 import Journal from "./components/Journal";
 import Process from "./components/Process";
 import Stats from "./components/Stats";
+import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
           <Journal />
           <Process />
           <Stats />
+          <FAQ />
           <Footer />
         </div>
       )}
