@@ -49,8 +49,8 @@ export default function Hero() {
           style={{ y }}
         >
           <img
-            src="/hero-bg.png"
-            alt="Edwin Alex in Classroom"
+            src="/profile.jpg"
+            alt="Edwin Alex profile picture"
             className="w-full h-full object-cover"
           />
         </motion.div>
