@@ -24,8 +24,12 @@ export default function Navbar() {
         {/* Logo */}
         <div className="group relative w-9 h-9 flex items-center justify-center rounded-full overflow-hidden transition-transform hover:scale-110">
           <div className="absolute inset-0 accent-gradient animate-gradient-shift group-hover:animate-[gradient-shift_3s_linear_infinite_reverse]" />
-          <div className="absolute inset-[2px] bg-bg rounded-full flex items-center justify-center">
-            <span className="font-display italic text-[13px] text-text-primary">JA</span>
+          <div className="absolute inset-[2px] bg-bg rounded-full flex items-center justify-center overflow-hidden">
+            <img 
+              src="/profile.jpg" 
+              alt="Edwin Alex Profile" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
