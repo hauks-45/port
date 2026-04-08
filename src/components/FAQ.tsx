@@ -44,11 +44,11 @@ export default function FAQ() {
               <div className="w-8 h-px bg-stroke" />
               <span className="text-xs text-muted uppercase tracking-[0.3em]">Support</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-body text-text-primary mb-8 leading-tight">
+            <h2 className="text-4xl md:text-6xl font-body text-text-primary mb-8 leading-tight text-balance">
               Commonly asked <br />
               <span className="font-display italic">questions</span>
             </h2>
-            <p className="text-muted text-base md:text-lg leading-relaxed max-w-md">
+            <p className="text-muted text-base md:text-lg leading-relaxed max-w-md text-balance">
               Finding answers shouldn't be a project of its own. Here are some of the most frequent questions I receive from clients.
             </p>
           </motion.div>
@@ -65,14 +65,14 @@ export default function FAQ() {
               >
                 <div 
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className={`group cursor-pointer overflow-hidden rounded-2xl border transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] ${
+                  className={`group cursor-pointer overflow-hidden rounded-2xl transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] premium-shadow transition-shadow duration-200 ${
                     openIndex === index 
-                      ? 'bg-surface border-white/10' 
-                      : 'bg-transparent border-stroke hover:border-white/5'
+                      ? 'bg-surface border border-white/10' 
+                      : 'bg-transparent border border-stroke hover:border-white/5'
                   }`}
                 >
                   <div className="p-5 md:p-7 flex items-center justify-between gap-6">
-                    <h3 className={`text-base md:text-lg font-medium tracking-tight transition-colors duration-300 ${
+                    <h3 className={`text-base md:text-lg font-medium tracking-tight transition-colors duration-300 text-balance ${
                       openIndex === index ? 'text-text-primary' : 'text-text-primary/80 group-hover:text-text-primary'
                     }`}>
                       {faq.question}
@@ -91,7 +91,7 @@ export default function FAQ() {
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
+                        exit={{ height: 0, opacity: 0, y: -12, filter: "blur(5px)" }}
                         transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                       >
                         <div className="px-5 pb-7 md:px-7 md:pb-7 pt-0">

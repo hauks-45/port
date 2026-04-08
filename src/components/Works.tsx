@@ -53,15 +53,15 @@ export default function Works() {
               <div className="w-8 h-px bg-stroke" />
               <span className="text-xs text-muted uppercase tracking-[0.3em]">Selected Work</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-body text-text-primary mb-6">
+            <h2 className="text-4xl md:text-6xl font-body text-text-primary mb-6 text-balance">
               Featured <span className="font-display italic">projects</span>
             </h2>
-            <p className="text-muted text-sm md:text-base leading-relaxed">
+            <p className="text-muted text-sm md:text-base leading-relaxed text-balance">
               A selection of digital experiences built with no-code tools and AI-assisted workflows.
             </p>
           </div>
           
-          <button className="hidden md:inline-flex group relative items-center gap-3 rounded-full px-6 py-3 border border-stroke text-sm text-text-primary hover:border-transparent transition-all">
+          <button className="hidden md:inline-flex group relative items-center gap-3 rounded-full pl-6 pr-4 py-3 border border-stroke text-sm text-text-primary hover:border-transparent transition-all">
             <span className="relative z-10 flex items-center gap-2">
               View all work <ArrowRight className="w-4 h-4" />
             </span>
@@ -79,14 +79,14 @@ export default function Works() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`${project.span} group relative bg-surface border border-stroke rounded-3xl overflow-hidden ${project.aspect}`}
+              className={`${project.span} group relative bg-surface premium-shadow rounded-3xl overflow-hidden transition-shadow duration-200 ${project.aspect}`}
             >
               {/* Background Image */}
               <img
                 src={project.image}
                 alt={project.title}
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 outline outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10"
               />
               
               {/* Halftone Overlay */}
@@ -102,7 +102,7 @@ export default function Works() {
                     View Project
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-display italic text-white mb-2 shadow-black/50 drop-shadow-lg">
+                <h3 className="text-2xl md:text-3xl font-display italic text-white mb-2 shadow-black/50 drop-shadow-lg text-balance">
                   {project.title}
                 </h3>
                 <p className="text-white/90 text-sm max-w-[200px] shadow-black/50 drop-shadow-md">

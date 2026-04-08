@@ -16,22 +16,6 @@ export default function Hero() {
       setRoleIndex((prev) => (prev + 1) % roles.length);
     }, 2000);
 
-    // GSAP Entrance
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-    tl.to(".name-reveal", {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      delay: 0.5,
-    })
-    .to(".blur-in", {
-      opacity: 1,
-      filter: "blur(0px)",
-      y: 0,
-      duration: 1,
-      stagger: 0.1,
-    }, "-=0.8");
-
     return () => clearInterval(roleInterval);
   }, []);
 
@@ -51,7 +35,7 @@ export default function Hero() {
           <img
             src="/hero-bg.png"
             alt="Edwin Alex in Classroom"
-            className="w-full h-full object-cover object-[center_15%] md:object-[center_20%]"
+            className="w-full h-full object-cover object-[center_15%] md:object-[center_20%] outline outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10"
           />
         </motion.div>
         <div className="absolute inset-0 bg-black/65" />
@@ -60,25 +44,50 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl">
-        <div className="blur-in opacity-0 translate-y-5 text-xs text-muted uppercase tracking-[0.3em] mb-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 8, filter: "blur(5px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, delay: 0 }}
+          className="text-xs text-muted uppercase tracking-[0.3em] mb-8"
+        >
           ESTABLISHED IN DUBAI
-        </div>
+        </motion.div>
         
-        <h1 className="name-reveal opacity-0 translate-y-[50px] text-6xl md:text-8xl lg:text-9xl font-display italic leading-[0.9] tracking-tight text-text-primary mb-6">
+        <motion.h1 
+          initial={{ opacity: 0, y: 8, filter: "blur(5px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-6xl md:text-8xl lg:text-9xl font-display italic leading-[0.9] tracking-tight text-text-primary mb-6 text-balance"
+        >
           Edwin Alex
-        </h1>
+        </motion.h1>
 
-        <div className="blur-in opacity-0 translate-y-5 text-lg md:text-2xl text-text-primary/90 mb-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 8, filter: "blur(5px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-lg md:text-2xl text-text-primary/90 mb-6 text-balance"
+        >
           A <span key={roleIndex} className="font-display italic text-text-primary animate-role-fade-in inline-block">
             {roles[roleIndex]}
           </span> based in Dubai, UAE.
-        </div>
+        </motion.div>
 
-        <p className="blur-in opacity-0 translate-y-5 text-sm md:text-base text-muted max-w-md mx-auto mb-12">
+        <motion.p 
+          initial={{ opacity: 0, y: 8, filter: "blur(5px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-sm md:text-base text-muted max-w-md mx-auto mb-12 text-balance"
+        >
           Designing seamless digital interactions by focusing on the unique nuances which bring systems to life.
-        </p>
+        </motion.p>
 
-        <div className="blur-in opacity-0 translate-y-5 flex flex-wrap justify-center gap-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 8, filter: "blur(5px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-wrap justify-center gap-4"
+        >
           <button className="group relative rounded-full text-sm px-7 py-3.5 bg-text-primary text-bg transition-all hover:scale-105 hover:bg-bg hover:text-text-primary overflow-hidden">
             <span className="relative z-10">See Works</span>
             <div className="absolute inset-0 accent-gradient opacity-0 group-hover:opacity-100 transition-opacity -z-10" style={{ padding: '2px' }}>
@@ -86,13 +95,13 @@ export default function Hero() {
             </div>
           </button>
           
-          <button className="group relative rounded-full text-sm px-7 py-3.5 border-2 border-stroke bg-bg text-text-primary transition-all hover:scale-105 hover:border-transparent">
+          <button className="group relative rounded-full text-sm pl-7 pr-5 py-3.5 border-2 border-stroke bg-bg text-text-primary transition-all hover:scale-105 hover:border-transparent">
             <span className="relative z-10 flex items-center gap-2">
               Reach out... <ArrowUpRight className="w-4 h-4" />
             </span>
             <div className="absolute inset-[-2px] accent-gradient opacity-0 group-hover:opacity-100 transition-opacity rounded-full -z-10" />
           </button>
-        </div>
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}

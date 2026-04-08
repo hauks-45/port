@@ -49,15 +49,15 @@ export default function Journal() {
               <div className="w-8 h-px bg-stroke" />
               <span className="text-xs text-muted uppercase tracking-[0.3em]">Insights</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-body text-text-primary mb-6">
+            <h2 className="text-4xl md:text-6xl font-body text-text-primary mb-6 text-balance">
               Design <span className="font-display italic">process</span>
             </h2>
-            <p className="text-muted text-sm md:text-base leading-relaxed">
+            <p className="text-muted text-sm md:text-base leading-relaxed text-balance">
               Thoughts on no-code, AI tools, and the future of digital product design.
             </p>
           </div>
           
-          <button className="group relative items-center gap-3 rounded-full px-6 py-3 border border-stroke text-sm text-text-primary hover:border-transparent transition-all">
+          <button className="group relative items-center gap-3 rounded-full pl-6 pr-4 py-3 border border-stroke text-sm text-text-primary hover:border-transparent transition-all">
             <span className="relative z-10 flex items-center gap-2">
               View all <ArrowRight className="w-4 h-4" />
             </span>
@@ -82,12 +82,12 @@ export default function Journal() {
                   src={entry.image} 
                   alt={entry.title} 
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 outline outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10"
                 />
               </div>
               
               <div className="flex-1">
-                <h3 className="text-lg md:text-xl text-text-primary group-hover:text-accent transition-colors mb-1">
+                <h3 className="text-lg md:text-xl text-text-primary group-hover:text-accent transition-colors mb-1 text-balance">
                   {entry.title}
                 </h3>
                 <div className="flex items-center gap-4 text-xs text-muted uppercase tracking-wider">

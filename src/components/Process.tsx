@@ -125,7 +125,7 @@ export default function Process() {
           <span className="text-[10px] text-muted uppercase tracking-[0.5em] mb-6 block">Approach</span>
           <h2 
             ref={headingRef}
-            className="text-5xl md:text-8xl font-display text-text-primary transition-all duration-1000 ease-out origin-center"
+            className="text-5xl md:text-8xl font-display text-text-primary transition-all duration-1000 ease-out origin-center text-balance"
             style={{ transform: 'scale(0.8)', opacity: 0 }}
           >
             Design that <span className="italic font-display">works</span>
@@ -150,14 +150,14 @@ export default function Process() {
                 {/* Text Content */}
                 <div className="flex-1 text-center md:text-left z-10">
                   <div className="flip-container inline-block mb-4 md:mb-6">
-                    <div className="flip-number text-7xl md:text-9xl font-display text-text-primary/10 transition-all duration-700">
+                    <div className="flip-number text-7xl md:text-9xl font-display text-text-primary/10 transition-all duration-700 tabular-nums">
                       {step.number}
                     </div>
                   </div>
-                  <h3 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-4 tracking-tight">
+                  <h3 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-4 tracking-tight text-balance">
                     {step.title}
                   </h3>
-                  <p className="text-muted text-base md:text-lg font-light max-w-md mx-auto md:mx-0">
+                  <p className="text-muted text-base md:text-lg font-light max-w-md mx-auto md:mx-0 text-balance">
                     {step.description}
                   </p>
                 </div>
@@ -169,7 +169,7 @@ export default function Process() {
                     src={step.image}
                     alt={step.title}
                     referrerPolicy="no-referrer"
-                    className="parallax-img w-full h-full object-cover scale-110 transition-transform duration-100 ease-out"
+                    className="parallax-img w-full h-full object-cover scale-110 transition-transform duration-100 ease-out outline outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10"
                   />
                   {/* Border Glow */}
                   <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none shadow-[inset_0_0_40px_rgba(255,255,255,0.05),0_0_20px_rgba(255,255,255,0.05)]" />

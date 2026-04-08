@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         <div className="max-w-2xl mb-24 md:mb-32">
-          <h2 className="text-4xl md:text-7xl font-body text-text-primary mb-12">
+          <h2 className="text-4xl md:text-7xl font-body text-text-primary mb-12 text-balance">
             Let's build the <span className="font-display italic">future</span> of the web.
           </h2>
           
