@@ -68,13 +68,11 @@ export default function Process() {
         if (rect.top < windowHeight && rect.bottom > 0) {
           const img = card.querySelector(".parallax-img") as HTMLElement;
           if (img) {
-            const speed = 0.08;
-            const cardHeight = rect.height || 400;
-            // Limit offset to max +/- 10% of card height so zoomed image never uncovers borders
-            const rawOffset = (rect.top - windowHeight / 2) * speed;
-            const maxOffset = cardHeight * 0.1;
-            const offset = Math.max(-maxOffset, Math.min(maxOffset, rawOffset));
-            img.style.transform = `translateY(${offset}px) scale(1.25)`;
+            // Map scroll progress through viewport (0 to 1) to translateY range inside extended container
+            const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+            // Smoothly move from -12% to +12% relative translation
+            const translateYPercent = (progress - 0.5) * 24;
+            img.style.transform = `translateY(${translateYPercent}%)`;
           }
         }
       });
@@ -169,12 +167,14 @@ export default function Process() {
                 {/* Image Container */}
                 <div className="flex-1 w-full aspect-[4/3] md:aspect-square overflow-hidden rounded-2xl md:rounded-3xl border border-white/5 group-hover:border-white/20 transition-colors duration-500 relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    referrerPolicy="no-referrer"
-                    className="parallax-img w-full h-full object-cover scale-110 transition-transform duration-100 ease-out outline outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10"
-                  />
+                  <div className="absolute -top-[15%] left-0 right-0 h-[130%] w-full overflow-hidden">
+                    <img
+                      src={step.image}
+                      alt={step.title}
+                      referrerPolicy="no-referrer"
+                      className="parallax-img w-full h-full object-cover transition-transform duration-75 ease-out outline outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10"
+                    />
+                  </div>
                   {/* Border Glow */}
                   <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none shadow-[inset_0_0_40px_rgba(255,255,255,0.05),0_0_20px_rgba(255,255,255,0.05)]" />
                 </div>
