@@ -14,9 +14,9 @@ export default function Navbar() {
       const workSection = document.getElementById("work");
       if (workSection) {
         const rect = workSection.getBoundingClientRect();
-        if (rect.top <= 100 && rect.bottom >= 100) {
+        if (rect.top <= 200 && rect.bottom >= 200) {
           setActiveTab("Work");
-        } else if (window.scrollY < 100) {
+        } else if (window.scrollY < 200) {
           setActiveTab("Home");
         }
       }
@@ -84,8 +84,8 @@ export default function Navbar() {
 
         {/* Say Hi Button */}
         <button 
-          onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}
-          className="group relative text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-text-primary overflow-hidden"
+          onClick={() => document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" })}
+          className="group relative text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-text-primary overflow-hidden cursor-pointer"
         >
           <span className="relative z-10 flex items-center gap-1">
             Say hi <span className="text-[10px]">↗</span>

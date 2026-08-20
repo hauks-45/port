@@ -192,6 +192,9 @@ export default function Process() {
           transform: translateX(0) translateY(0) rotate(0) !important;
           opacity: 1 !important;
         }
+        h2.is-visible {
+          opacity: 1 !important;
+        }
         .process-card.is-visible .flip-number {
           animation: flip-score 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
         }

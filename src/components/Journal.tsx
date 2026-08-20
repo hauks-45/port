@@ -57,7 +57,10 @@ export default function Journal() {
             </p>
           </div>
           
-          <button className="group relative items-center gap-3 rounded-full pl-6 pr-4 py-3 border border-stroke text-sm text-text-primary hover:border-transparent transition-all">
+          <button
+            onClick={() => document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" })}
+            className="group relative items-center gap-3 rounded-full pl-6 pr-4 py-3 border border-stroke text-sm text-text-primary hover:border-transparent transition-all cursor-pointer"
+          >
             <span className="relative z-10 flex items-center gap-2">
               View all <ArrowRight className="w-4 h-4" />
             </span>
@@ -75,13 +78,17 @@ export default function Journal() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+              onClick={() => document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" })}
               className="group flex flex-col sm:flex-row items-start sm:items-center gap-6 p-4 sm:p-6 bg-surface/30 hover:bg-surface border border-stroke rounded-[32px] sm:rounded-full transition-all duration-500 cursor-pointer"
             >
-              <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border border-stroke">
+              <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border border-stroke bg-surface flex items-center justify-center">
                 <img 
                   src={entry.image} 
                   alt={entry.title} 
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLElement).style.display = 'none';
+                  }}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 outline outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10"
                 />
               </div>

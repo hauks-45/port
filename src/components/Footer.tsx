@@ -30,10 +30,15 @@ export default function Footer() {
     });
   }, []);
 
-  const socials = ["Twitter", "LinkedIn", "Dribbble", "GitHub"];
+  const socials = [
+    { name: "Twitter", url: "https://twitter.com" },
+    { name: "LinkedIn", url: "https://linkedin.com" },
+    { name: "Dribbble", url: "https://dribbble.com" },
+    { name: "GitHub", url: "https://github.com" },
+  ];
 
   return (
-    <footer className="relative bg-bg pt-16 md:pt-32 pb-8 md:pb-12 overflow-hidden">
+    <footer id="footer" className="relative bg-bg pt-16 md:pt-32 pb-8 md:pb-12 overflow-hidden">
       {/* Background Video (Flipped) */}
       <div className="absolute inset-0 z-0 scale-y-[-1]">
         <video
@@ -80,11 +85,13 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             {socials.map((social) => (
               <a 
-                key={social} 
-                href="#" 
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs text-muted uppercase tracking-widest hover:text-text-primary transition-colors"
               >
-                {social}
+                {social.name}
               </a>
             ))}
           </div>

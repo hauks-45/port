@@ -13,6 +13,8 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
   useEffect(() => {
     let startTime: number | null = null;
+    let animId: number;
+    let timerId: ReturnType<typeof setTimeout>;
     const duration = 2700;
 
     const animate = (timestamp: number) => {
@@ -23,19 +25,21 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       setCount(currentCount);
 
       if (progress < duration) {
-        requestAnimationFrame(animate);
+        animId = requestAnimationFrame(animate);
       } else {
-        setTimeout(onComplete, 400);
+        timerId = setTimeout(onComplete, 400);
       }
     };
 
-    requestAnimationFrame(animate);
+    animId = requestAnimationFrame(animate);
 
     const wordInterval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
     }, 900);
 
     return () => {
+      cancelAnimationFrame(animId);
+      clearTimeout(timerId);
       clearInterval(wordInterval);
     };
   }, [onComplete]);

@@ -88,14 +88,20 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-wrap justify-center gap-4"
         >
-          <button className="group relative rounded-full text-sm px-7 py-3.5 bg-text-primary text-bg transition-all hover:scale-105 hover:bg-bg hover:text-text-primary overflow-hidden">
+          <button
+            onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
+            className="group relative rounded-full text-sm px-7 py-3.5 bg-text-primary text-bg transition-all hover:scale-105 hover:bg-bg hover:text-text-primary overflow-hidden cursor-pointer"
+          >
             <span className="relative z-10">See Works</span>
             <div className="absolute inset-0 accent-gradient opacity-0 group-hover:opacity-100 transition-opacity -z-10" style={{ padding: '2px' }}>
               <div className="w-full h-full bg-bg rounded-full" />
             </div>
           </button>
           
-          <button className="group relative rounded-full text-sm pl-7 pr-5 py-3.5 border-2 border-stroke bg-bg text-text-primary transition-all hover:scale-105 hover:border-transparent">
+          <button
+            onClick={() => document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" })}
+            className="group relative rounded-full text-sm pl-7 pr-5 py-3.5 border-2 border-stroke bg-bg text-text-primary transition-all hover:scale-105 hover:border-transparent cursor-pointer"
+          >
             <span className="relative z-10 flex items-center gap-2">
               Reach out... <ArrowUpRight className="w-4 h-4" />
             </span>
@@ -105,12 +111,15 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
-        <span className="text-xs text-muted uppercase tracking-[0.2em]">SCROLL</span>
+      <button
+        onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 cursor-pointer group"
+      >
+        <span className="text-xs text-muted uppercase tracking-[0.2em] group-hover:text-text-primary transition-colors">SCROLL</span>
         <div className="w-px h-10 bg-stroke relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1/3 accent-gradient animate-scroll-down" />
         </div>
-      </div>
+      </button>
     </section>
   );
 }
