@@ -68,9 +68,13 @@ export default function Process() {
         if (rect.top < windowHeight && rect.bottom > 0) {
           const img = card.querySelector(".parallax-img") as HTMLElement;
           if (img) {
-            const speed = 0.1;
-            const offset = (rect.top - windowHeight / 2) * speed;
-            img.style.transform = `translateY(${offset}px) scale(1.1)`;
+            const speed = 0.08;
+            const cardHeight = rect.height || 400;
+            // Limit offset to max +/- 10% of card height so zoomed image never uncovers borders
+            const rawOffset = (rect.top - windowHeight / 2) * speed;
+            const maxOffset = cardHeight * 0.1;
+            const offset = Math.max(-maxOffset, Math.min(maxOffset, rawOffset));
+            img.style.transform = `translateY(${offset}px) scale(1.25)`;
           }
         }
       });
