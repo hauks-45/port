@@ -61,7 +61,10 @@ export default function Works() {
             </p>
           </div>
           
-          <button className="hidden md:inline-flex group relative items-center gap-3 rounded-full pl-6 pr-4 py-3 border border-stroke text-sm text-text-primary hover:border-transparent transition-all">
+          <button
+            onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
+            className="hidden md:inline-flex group relative items-center gap-3 rounded-full pl-6 pr-4 py-3 border border-stroke text-sm text-text-primary hover:border-transparent transition-all cursor-pointer"
+          >
             <span className="relative z-10 flex items-center gap-2">
               View all work <ArrowRight className="w-4 h-4" />
             </span>
@@ -79,7 +82,8 @@ export default function Works() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`${project.span} group relative bg-surface premium-shadow rounded-3xl overflow-hidden transition-shadow duration-200 ${project.aspect}`}
+              onClick={() => document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" })}
+              className={`${project.span} group relative bg-surface premium-shadow rounded-3xl overflow-hidden transition-shadow duration-200 cursor-pointer ${project.aspect}`}
             >
               {/* Background Image */}
               <img

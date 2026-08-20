@@ -20,6 +20,10 @@ export default function App() {
     } else {
       document.body.style.overflow = "unset";
     }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [isLoading]);
 
   return (
